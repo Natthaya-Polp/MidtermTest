@@ -100,56 +100,53 @@ class PersonList
 
     public void CountStudentGrade10()
     {
-        if(personList is HighSchoolStudent)
-        {
-            int count = 0;
-            foreach(HighSchoolStudent highschoolstudent in this.personList)
-            { 
+        int count = 0;
+        foreach(Person person in personList)
+        { 
+            if (person is HighSchoolStudent highschoolstudent)
+            {
                 string grade = "10";
-
                 if (highschoolstudent.GetGrade().Equals(grade))
                 {
                     count++;
                 }
             }
-            Console.WriteLine("Total number of registered grade 10 students : {0}",count);
         }
+        Console.WriteLine("Total number of registered grade 10 students : {0}",count);
     }
 
     public void CountStudentGrade11()
     {
-        if(personList is HighSchoolStudent)
-        {
-            int count = 0;
-            foreach(HighSchoolStudent highschoolstudent in this.personList)
-            { 
+        int count = 0;
+        foreach(Person person in personList)
+        { 
+            if (person is HighSchoolStudent highschoolstudent)
+            {
                 string grade = "11";
-
                 if (highschoolstudent.GetGrade().Equals(grade))
                 {
                     count++;
                 }
             }
-            Console.WriteLine("Total number of registered grade 11 students : {0}",count);
         }
+        Console.WriteLine("Total number of registered grade 11 students : {0}",count);
     }
 
     public void CountStudentGrade12()
     {
-        if(personList is HighSchoolStudent)
-        {
-            int count = 0;
-            foreach(HighSchoolStudent highschoolstudent in this.personList)
-            { 
+        int count = 0;
+        foreach(Person person in personList)
+        { 
+            if (person is HighSchoolStudent highschoolstudent)
+            {
                 string grade = "12";
-
                 if (highschoolstudent.GetGrade().Equals(grade))
                 {
                     count++;
                 }
             }
-            Console.WriteLine("Total number of registered grade 12 students : {0}",count);
         }
+        Console.WriteLine("Total number of registered grade 12 students : {0}",count);
     }
 
     public UniversityStudent CheckUniversityStudent(UniversityStudent CheckUS)
