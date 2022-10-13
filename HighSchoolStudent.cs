@@ -9,4 +9,9 @@ public class HighSchoolStudent: Person
         this.grade = grade;
         this.schoolname = schoolname;
     }
+
+    public string GetGrade()
+    {
+        return this.grade;
+    }
 }

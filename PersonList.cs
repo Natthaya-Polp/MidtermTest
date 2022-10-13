@@ -98,49 +98,112 @@ class PersonList
         Console.WriteLine("Total number of registered university students : {0}",count);
     }
 
-    public UniversityStudent CheckUniversityStudent(UniversityStudent CheckInfo)
+    public void CountStudentGrade10()
     {
-        foreach(UniversityStudent person in this.personList)
-        { 
-            string prefix = CheckInfo.GetPrefix();
-            string name = CheckInfo.GetName();
-            string surname = CheckInfo.GetSurname();
+        if(personList is HighSchoolStudent)
+        {
+            int count = 0;
+            foreach(HighSchoolStudent highschoolstudent in this.personList)
+            { 
+                string grade = "10";
 
-            if (person.GetPrefix().Equals(prefix) && person.GetName().Equals(name) && person.GetSurname().Equals(surname))
-            {
-                return person;
+                if (highschoolstudent.GetGrade().Equals(grade))
+                {
+                    count++;
+                }
             }
+            Console.WriteLine("Total number of registered grade 10 students : {0}",count);
         }
-        return null;
     }
-    public HighSchoolStudent CheckHighSchoolStudent(HighSchoolStudent CheckInfo)
-    {
-        foreach(HighSchoolStudent person in this.personList)
-        { 
-            string prefix = CheckInfo.GetPrefix();
-            string name = CheckInfo.GetName();
-            string surname = CheckInfo.GetSurname();
 
-            if (person.GetPrefix().Equals(prefix) && person.GetName().Equals(name) && person.GetSurname().Equals(surname))
-            {
-                return null;
+    public void CountStudentGrade11()
+    {
+        if(personList is HighSchoolStudent)
+        {
+            int count = 0;
+            foreach(HighSchoolStudent highschoolstudent in this.personList)
+            { 
+                string grade = "11";
+
+                if (highschoolstudent.GetGrade().Equals(grade))
+                {
+                    count++;
+                }
             }
+            Console.WriteLine("Total number of registered grade 11 students : {0}",count);
         }
-        return CheckInfo;
     }
-    public Teacher CheckTeacher(Teacher CheckInfo)
-    {
-        foreach(Teacher person in this.personList)
-        { 
-            string prefix = CheckInfo.GetPrefix();
-            string name = CheckInfo.GetName();
-            string surname = CheckInfo.GetSurname();
 
-            if (person.GetPrefix().Equals(prefix) && person.GetName().Equals(name) && person.GetSurname().Equals(surname))
-            {
-                return person;
+    public void CountStudentGrade12()
+    {
+        if(personList is HighSchoolStudent)
+        {
+            int count = 0;
+            foreach(HighSchoolStudent highschoolstudent in this.personList)
+            { 
+                string grade = "12";
+
+                if (highschoolstudent.GetGrade().Equals(grade))
+                {
+                    count++;
+                }
+            }
+            Console.WriteLine("Total number of registered grade 12 students : {0}",count);
+        }
+    }
+
+    public UniversityStudent CheckUniversityStudent(UniversityStudent CheckUS)
+    {
+        if(personList is UniversityStudent)
+        {
+            foreach(UniversityStudent universitystudent in this.personList)
+            { 
+                string prefix = CheckUS.GetPrefix();
+                string name = CheckUS.GetName();
+                string surname = CheckUS.GetSurname();
+
+                if (universitystudent.GetPrefix().Equals(prefix) && universitystudent.GetName().Equals(name) && universitystudent.GetSurname().Equals(surname))
+                {
+                    return null;
+                }
             }
         }
-        return null;
+        return CheckUS;
+    }
+    public HighSchoolStudent CheckHighSchoolStudent(HighSchoolStudent CheckHS)
+    {
+        if(personList is HighSchoolStudent)
+        {
+            foreach(HighSchoolStudent highschoolstudent in this.personList)
+            { 
+                string prefix = CheckHS.GetPrefix();
+                string name = CheckHS.GetName();
+                string surname = CheckHS.GetSurname();
+
+                if (highschoolstudent.GetPrefix().Equals(prefix) && highschoolstudent.GetName().Equals(name) && highschoolstudent.GetSurname().Equals(surname))
+                {
+                    return null;
+                }
+            }
+        }
+        return CheckHS;
+    }
+    public Teacher CheckTeacher(Teacher CheckT)
+    {
+        if(personList is Teacher)
+        {
+            foreach(Teacher teacher in this.personList)
+            { 
+                string prefix = CheckT.GetPrefix();
+                string name = CheckT.GetName();
+                string surname = CheckT.GetSurname();
+
+                if (teacher.GetPrefix().Equals(prefix) && teacher.GetName().Equals(name) && teacher.GetSurname().Equals(surname))
+                {
+                    return null;
+                }
+            }
+        }
+        return CheckT;
     }
 }

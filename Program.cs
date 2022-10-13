@@ -134,11 +134,11 @@ class Program
         string exit = Console.ReadLine();
         if (exit == "exit")
         {
-            BackToMainMenu();
+            PrintListSignInMenu();
         }
         else
         {
-            BackToMainMenu();
+            PrintListSignInMenu();
         }
     }
 
@@ -149,18 +149,21 @@ class Program
 
     static void ShowUniversityStudentList()
     {
+        Console.Clear();
         Program.personList.FetchUniversityStudentList();
         InputToBackToMenu();
     }
 
     static void ShowHighSchoolStudentList()
     {
+        Console.Clear();
         Program.personList.FetchHighSchoolStudentList();
         InputToBackToMenu();
     }
 
     static void ShowTeacherList()
     {
+        Console.Clear();
         Program.personList.FetchTeacherList();
         InputToBackToMenu();
     }
@@ -213,7 +216,7 @@ class Program
         admincheck = AreYouAnAdmin(),InputEmail(admincheck),InputPassword(admincheck));
 
         UniversityStudent check = personList.CheckUniversityStudent(universitystudent);
-        if(check == null)
+        if(check != null)
         {
             Program.personList.AddNewPerson(universitystudent);
             BackToMainMenu();
@@ -257,7 +260,7 @@ class Program
         admincheck = AreYouAnAdmin(),InputEmail(admincheck),InputPassword(admincheck));
 
         Teacher check = personList.CheckTeacher(teacher);
-        if(check == null)
+        if(check != null)
         {
             Program.personList.AddNewPerson(teacher);
             BackToMainMenu();
@@ -395,6 +398,7 @@ class Program
 
     static void InputSignInInfo()
     {
+        Console.Clear();
         Console.WriteLine("                Sign In                 ");
         Console.WriteLine("----------------------------------------");
         Console.WriteLine("Please input 'exit' to back to main menu");
@@ -403,7 +407,7 @@ class Program
 
         if (email == "exit")
         {
-            BackToMainMenu();
+            PrintListSignInMenu();
         }
         else
         {
@@ -415,9 +419,13 @@ class Program
 
     static void ShowStat()
     {
+        Console.Clear();
         Program.personList.CountTeacher();
         Program.personList.CountHighSchoolStudent();
         Program.personList.CountUniversityStudent();
+        Program.personList.CountStudentGrade10();
+        Program.personList.CountStudentGrade11();
+        Program.personList.CountStudentGrade12();
 
         Console.Write("Press Enter to back to main menu.");
         Console.ReadLine();
